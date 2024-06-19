@@ -1,0 +1,23 @@
+daftar.js = sebagai register => username, password, pengguna(pembeli atau kurir)
+login.js = sebagai login => pengguna sudah otomatis di ambil dari register
+kurir.js = sebagai fitur kurir => User memasukan no resi dan id_alat yang akan di masukan
+kirim_data.js = sebagai fitur esp32 => mengirim data ID_alat, file_name, gambar, dan pintu
+mendapatkan_data.js = mendapatkan data berdasarkan ID_alat dan juga nomor resi untuk sisi pembeli.
+selesaikan.js = paket telah di ambil data yg sebelumnya di hapus
+///
+- Admin input data resi ,no box nya ke data base (kg,nama, alamat dll) kelengkapan datanya aja contoh
+- admin masukin barang ke dalam box
+- kurir mengambil barang stepnya
+       1. Resi input melalui apk kurir
+2. Kurir menghadap kamera untuk melanjutkan identifikasi gambar
+3. Pintu terbuka sesuai input resi 
+4. Kurir tutup pintu
+5. Limit switch terdetect
+5. Selenoid tutup ( terkunci)
+
+(selesai daftar, login)
+versi kurir login, input resi, klik ok ada dua kemungkinan resi salah sama benar. misal benar ngirim data 000 ke esp32. kondisi kurir ngambil barang. Bang 1 lagi, jika dia benar, terus kurir verifikasi wajah ke esp32 cam, setelah selesai kirim 000
+gowipe123@
+
+103.151.140.21
+5sDv@4SfWfZBCU#Y
