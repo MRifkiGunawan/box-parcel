@@ -20,10 +20,10 @@ router.post("/login", async (req, res) => {
         if (!rows || rows.length === 0) {
             return res.status(404).json({ success: false, error: 'Pengguna tidak ditemukan.' });
         }
-
-        // Ambil password terenkripsi dari hasil query
-        const storedPassword = rows[0].Password;
-        console.log(storedPassword);
+        
+        const user = rows[0];
+        const storedPassword = user.Password;
+      
         // Enkripsi password yang dimasukkan untuk membandingkan dengan yang ada di database
         const secretKey = 'kunci_rahasia';
         const decipher = crypto.createDecipher('aes-256-cbc', secretKey);
@@ -35,13 +35,7 @@ router.post("/login", async (req, res) => {
             return res.status(401).json({ success: false, error: 'Password salah.' });
         }
 
-        // Jika autentikasi berhasil, Anda bisa mengirimkan token sesi atau informasi pengguna lainnya
-        // Misalnya, Anda bisa menggunakan JWT untuk menghasilkan token sesi
-
-        // Contoh sederhana tanpa JWT
-        // Di sini Anda bisa menyiapkan sesi atau token lainnya sesuai kebutuhan aplikasi Anda
-
-        res.status(200).json({ success: true, message: 'Login berhasil.' });
+        res.status(200).json({ success: true, message: 'Login berhasil.', user: {Pengguna: user.Pengguna}});
 
     } catch (error) {
         console.error(error);
