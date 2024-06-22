@@ -12,7 +12,7 @@ router.post("/daftar", async (req, res) => {
         // Validasi tipe pengguna
         const allowedRoles = ['Admin', 'Kurir'];
         if (!allowedRoles.includes(Pengguna)) {
-            return res.status(400).json({ success: false, error: 'Tipe pengguna tidak valid. Hanya boleh Pembeli atau Kurir.' });
+            return res.status(400).json({ success: false, error: 'Tipe pengguna tidak valid. Hanya boleh Admin atau Kurir.' });
         }
         
         // Periksa apakah username sudah ada
